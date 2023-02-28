@@ -18,7 +18,7 @@
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
+    animation: pipe-animation 1.2s infinite linear;
 }
 
 .goku {
@@ -31,8 +31,10 @@
     animation: jump 500ms  ease-out;
 }
 
-.clouds {
-    
+.dragon1 {
+    width: 200px;
+    position: absolute;
+    animation: dragon1-animation 10s infinite linear;
 }
 
 @keyframes pipe-animation {
@@ -63,4 +65,15 @@
     100% {
         bottom: 0;
     }
+}
+@keyframes dragon1-animation {
+
+    from{
+        right: 100%;
+    }
+
+    to {
+        right: 0;
+    }
+ 
 }

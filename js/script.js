@@ -2,6 +2,7 @@ const goku = document.querySelector('.goku');
 const pipe = document.querySelector('.pipe');
 
 const jump = () => {
+
     goku.classList.add('jump');
     setTimeout( () => {
         goku.classList.remove('jump');
@@ -10,16 +11,24 @@ const jump = () => {
 
 const loop = setInterval( () => {
 
+    console.log('loop')
+
     const pipePosition = pipe.offsetLeft;
     const gokuPosition = +window.getComputedStyle(goku).bottom.replace('px','');
 
 
-    console.log(gokuPosition)
-
     if (pipePosition <= 120 && pipePosition > 0 && gokuPosition < 80) {
 
         pipe.style.animation = 'none';
-        pipe.style.left = '${pipePosition}px' ;
+        pipe.style.left = '${pipePosition}px';
+
+        goku.style.animation = 'none';
+        goku.style.bottom = '${gokuPosition}px';
+
+        goku.src = './imagens/goku-died.png';
+
+        clearInterval(loop);
+
 
     }
 

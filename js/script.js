@@ -11,11 +11,15 @@ const jump = () => {
 const loop = setInterval( () => {
 
     const pipePosition = pipe.offsetLeft;
-    console.log(pipePosition)
+    const gokuPosition = +window.getComputedStyle(goku).bottom.replace('px','');
 
-    if(pipePosition <= 120) {
 
-        pipe.style.animation = 'nome';
+    console.log(gokuPosition)
+
+    if (pipePosition <= 120 && pipePosition > 0 && gokuPosition < 80) {
+
+        pipe.style.animation = 'none';
+        pipe.style.left = '${pipePosition}px' ;
 
     }
 
